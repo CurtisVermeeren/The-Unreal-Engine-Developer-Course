@@ -25,6 +25,9 @@
   <ItemGroup>
     <ClInclude Include="FBullCowGame.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="isograms.txt" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{B10AF039-0946-4CD8-8E1B-A77B1BBF0369}</ProjectGuid>
