@@ -7,20 +7,26 @@ FBullCowGame::FBullCowGame()
 	Reset(false); 
 }
 
+// Return the users current try
 int32 FBullCowGame::GetCurrentTry() const { return CurrentTry; }
 
+// Return the length of the hidden word
 int32 FBullCowGame::GetHiddenWordLength() const { return HiddenWord.length(); }
 
+// Return the hidden word
 FString FBullCowGame::GetHiddenWord() const
 {
 	return HiddenWord;
 }
 
+// Check if the game has been won
 bool FBullCowGame::IsGameWon() const 
 { 
 	return bGameIsWon;
 }
 
+// Return the maximum number of tries
+// values scales based on the length of the hidden word
 int32 FBullCowGame::GetMaxTries() const 
 { 
 	TMap<int32, int32> WordLengthToMaxTries{
@@ -36,6 +42,7 @@ int32 FBullCowGame::GetMaxTries() const
 	return WordLengthToMaxTries[HiddenWord.length()];
 }
 
+// Checks that the guess is a valid isogram
 EGuessStatus FBullCowGame::CheckGuessValidity(FString Guess) const 
 {
 
@@ -57,6 +64,7 @@ EGuessStatus FBullCowGame::CheckGuessValidity(FString Guess) const
 	}
 }
 
+// Returns a random isogram for the dictionary of hidden words
 FString FBullCowGame::GetRandomHiddenWord() const
 {
 	std::srand((int32)time(0));

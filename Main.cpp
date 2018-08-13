@@ -3,6 +3,7 @@
 
 #include "FBullCowGame.h"
 
+// Make syntax Unreal friendly
 using FString = std::string;
 using int32 = int32;
 
@@ -12,6 +13,7 @@ void PlayGame();
 FString GetValidGuess();
 bool AskToPlayAgain();
 
+// Game object
 FBullCowGame BCGame;
 
 int32 main() 
@@ -27,6 +29,7 @@ int32 main()
 	return 0;
 }
 
+// Game loop
 void PlayGame() 
 {
 	int32 MaxTries = BCGame.GetMaxTries();
@@ -57,6 +60,7 @@ void PrintIntro()
 	return;
 }
 
+// Print the results of the game
 void PrintGameSummary()
 {
 	if (BCGame.IsGameWon()) {
@@ -98,6 +102,7 @@ FString GetValidGuess()
 	return Guess;
 }
 
+// Prompt the player if they want to play again
 bool AskToPlayAgain() 
 {
 	std::cout << "Do you want to play again? (y/n) ";
